@@ -29,6 +29,7 @@
 }
 body{
     background-image: url(../Images/game.png);
+    zoom: 90%;
 }
 #Title{
   font-size: 45px;
@@ -87,6 +88,10 @@ h1{
 
 .btn:hover {
   background-color: #2d6a98;
+}
+*{
+  box-sizing:border-box;
+  
 }
 
 /* #Game-info{

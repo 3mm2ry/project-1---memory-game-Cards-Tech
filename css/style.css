@@ -2,24 +2,25 @@ body {
   background-image: url(../Images/index.png);
   background-size: cover;
   text-align: center;
-  font-family: Arial, sans-serif;
-  padding-top: 100px;
+  font-family:Arial, Helvetica, sans-serif;
+  margin-top: 170px;
+
 }
 
 h1 {
-  font-size: 45px;
+  font-size: 50px;
   color: #123b5d;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 30px;
   color: #123b5d;
   font-style: italic;
   font-weight: bold;
 }
 
 p {
-  font-size: 18px;
+  font-size: 20px;
   color: #123b5d;
 }
 
@@ -29,21 +30,25 @@ p {
   width: 270px;
   padding: 10px;
 
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: bolder;
 
-  background-color: white;
+
   color: #1f4f75;
 
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
 
-  cursor: pointer;
+  cursor:pointer;
 }
 
 .btn1{
     background-color: rgb(154, 241, 22);
     color: black;
-    font-size: medium;
+    font-size:medium;
+
+
+
 }
 .btn2{
     background-color: rgb(216, 223, 80);
@@ -88,4 +93,11 @@ p {
 }
 .btn3:hover{
     background-color: white;
+}
+.Difficulty:focus{
+
+
+  border: 3px solid white;
+  outline: 2px solid black;
+
 }
