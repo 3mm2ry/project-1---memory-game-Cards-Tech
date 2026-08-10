@@ -12,7 +12,7 @@ console.log('Technologies Memory Match')
  let Difficulty=null; 
  let Lives =null;
 
-/*------------------------ Cached Element References ------------------------*/
+/*------------------------ Cached Element References  ------------------------*/
 
 const ChooseDifficultyButtons=document.querySelectorAll('.Difficulty')
 const Cards =document.querySelectorAll('.sqr')

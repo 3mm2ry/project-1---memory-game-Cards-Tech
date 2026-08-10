@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 
-.card:hover {
+.sqr:hover {
   background-color: #4c87bd;
 }
 body{
