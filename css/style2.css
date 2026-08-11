@@ -93,7 +93,13 @@ h1{
   box-sizing:border-box;
   
 }
-
+#Message{
+  text-align: center;
+  margin-left: 60px;
+ font-size: 25px;
+  color: rgb(75, 25, 225);
+  font-weight: bolder;
+}
 /* #Game-info{
     width: 280px;
   margin: 20px auto;

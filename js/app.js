@@ -20,11 +20,15 @@ const GameInfoDifficulty =document.querySelector('#Difficulty')
 const GameInfoLives =document.querySelector('#Lives')
 const GameInfoScore =document.querySelector('#Score')
 const GameInfoDuration =document.querySelector('#Duration')
+const Message =Document.querySelector('#Title')
 
 console.log(Cards,GameInfoDifficulty,ChooseDifficultyButtons,GameInfoLives,GameInfoDuration,GameInfoScore)
 
 
 /*-------------------------------- Functions --------------------------------*/
+
+
+
 
 
 
