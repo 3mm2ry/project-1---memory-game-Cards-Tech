@@ -29,12 +29,13 @@ console.log('Technologies Memory Match')
 
 
 let first
-let second
+let BestScore
 let score
 let Duration
 let Lives
 let Timmer
-
+let Difficulty
+let second
 
 /*------------------------ Cached Element References  ------------------------*/
 
@@ -73,53 +74,86 @@ function stoFunction (){
 
 /*-------------------------------- Functions --------------------------------*/
 
-//     ChooseDifficultyButtonsEl.forEach(function(button) {
 
-//     button.addEventListener('click', function() {
+function init (){
 
-//         localStorage.setItem("Difficulty", button.textContent);
+ clearInterval(Timmer) 
+ BestScore =0 ;
+  Duration =null ;
+  Timmer =0 ;
+  first =null ;
+   second=null ;
 
-//     });
-
-// });
-
-// console.log(localStorage.getItem("Difficulty"));
-// function init (){
+// Get Difficulty from localStorage
+Difficulty = localStorage.getItem("Difficulty")
 
 
-     ////local storage 
-     // localStorage.setItem("Difficulty", "Easy");
+    // Default
+
+if (Difficulty === null) {
+
+        Difficulty = "Easy"
+
+
+    }
+
+////--------------------------------
+    if (Difficulty === "Easy") {
+
+        Duration = 100
+        Lives = 10
+
+    }
+
+    else if (Difficulty === "Medium") {
+
+        Duration = 50
+        Lives = 6
+
+    }
+
+    else {
+
+        Duration = 25
+        Lives = 3
+
+    }
+       //to store the value into local storage  
+     localStorage.setItem("Difficulty",Difficulty)
+
+
+
+
+
+//    to add function into array and make the cards random
+   imagesArray.sort(function(){
+
+     return Math.random()-0.5
+
+
 
  
+})
 
 
+// Show cards
+for (let i = 0;i < CardsEl.length;i++ ) {
 
-//  BestScore =0 ;
-//   Duration =null ;
-//   Timmer =0 ;
-//   first =null ;
-//    second=null ;
-   
-   // to add function into array
-//    imagesArray.sort(function(){
+        CardsEl[i].textContent = ""
 
-//      return Math.random()-0.5
+        CardsEl[i].style.backgroundImage ="url(" + imagesArray[i] + ")"  // to add the photo by index of array 
 
+        CardsEl[i].style.backgroundSize = "contain"   // image size = card size
 
+        CardsEl[i].style.backgroundPosition ="center"
 
- 
-// })
-//  for(let i=0 ;i<ChooseDifficultyButtonsEl.length;i++){
-//   if(ChooseDifficultyButtonsEl[i].id==="btn1"){
-//    console.log(ChooseDifficultyButtonsEl[i].id)
-//  }
+        CardsEl[i].style.backgroundRepeat ="no-repeat"
 
-// }
+        CardsEl[i].style.visibility = "visible"
+
+    }
 
 }
-
-console.log(init() +"call")
-
 
 
 /*----------------------------- Event Listeners -----------------------------*/
