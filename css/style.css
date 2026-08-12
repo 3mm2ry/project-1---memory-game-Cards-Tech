@@ -42,7 +42,7 @@ p {
   cursor:pointer;
 }
 
-.btn1{
+#btn1{
     background-color: rgb(154, 241, 22);
     color: black;
     font-size:medium;
@@ -50,13 +50,13 @@ p {
 
 
 }
-.btn2{
+#btn2{
     background-color: rgb(216, 223, 80);
     color: black;
         font-size: medium;
 
 }
-.btn3{
+#btn3{
     background-color: rgb(213, 31, 31);
     color: black;
         font-size: medium;
