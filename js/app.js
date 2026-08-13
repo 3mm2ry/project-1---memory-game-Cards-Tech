@@ -55,15 +55,15 @@ console.log(CardsEl,GameInfoDifficultyEl,ChooseDifficultyButtonsEl,GameInfoLives
 
 /*------------------------- Difficulty Buttons (local storge) -------------------------*/
 
+// store the  Difficulty chose from users 
+
 for ( let i = 0;i < ChooseDifficultyButtonsEl.length;i++) {
 
 function stoFunction (){ 
-            localStorage.setItem(
-                "Difficulty",
-                ChooseDifficultyButtonsEl[i].textContent
-            )}
+            localStorage.setItem("Difficulty",ChooseDifficultyButtonsEl[i].textContent )
+        }
 
- ChooseDifficultyButtonsEl[i].addEventListener("click",stoFunction )
+ ChooseDifficultyButtonsEl[i].addEventListener("click",stoFunction )   // event click but i add it  here because we need the lop 
             
      
     
@@ -93,6 +93,7 @@ Difficulty = localStorage.getItem("Difficulty")
 if (Difficulty === null) {
 
         Difficulty = "Easy"
+     localStorage.setItem("Difficulty",Difficulty)
 
 
     }
@@ -118,8 +119,6 @@ if (Difficulty === null) {
         Lives = 3
 
     }
-       //to store the value into local storage  
-     localStorage.setItem("Difficulty",Difficulty)
 
 
 
@@ -153,7 +152,25 @@ for (let i = 0;i < CardsEl.length;i++ ) {
 
     }
 
+
+    
+GameInfoScoreEl.textContent ="🏆 Best Score : " + BestScore
+
+       GameInfoDurationEl.textContent ="⏱️ Duration : " + Duration
+
+    GameInfoDifficultyEl.textContent ="🎮 Difficulty : " + Difficulty
+
+
+    GameInfoLivesEl.textContent ="❤️ Lives : " + Lives
+
+MessageEl.textContent ="Press Start ▶️"
+
 }
+
+    // Game Info
+
+
+
 
 
 /*----------------------------- Event Listeners -----------------------------*/
