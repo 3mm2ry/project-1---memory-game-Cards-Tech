@@ -183,9 +183,11 @@ function startGame() {
 
     for (let i = 0;i < CardsEl.length;i++) {
 
-        CardsEl[i].style.backgroundImage ="none"
+        CardsEl[i].style.backgroundImage =
+            "none"
 
-        CardsEl[i].textContent ="💻"
+        CardsEl[i].textContent =
+            "💻"
 
     }
 
@@ -213,5 +215,34 @@ function startGame() {
 
 }, 1000)
 /// run this function every milliseconds 1000
+}
+
+/*-------------------------------- Handle Click --------------------------------*/
+
+function handleClick(event) {
+
+    // if there is no timmer -- exit 
+    if (!Timmer) {
+
+        return
+
+    }
+
+     // if second not null -- mean the player chose 2 carde and -- exit to prevent player chose more than 2 card
+    if (second !== null) {
+
+        return
+
+    }
+
+
+    let cardIndex = Number(event.target.id)
+
+
+    if (cardIndex === first) {
+
+        return
+
+    }
 }
 
