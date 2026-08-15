@@ -142,7 +142,7 @@ for (let i = 0;i < CardsEl.length;i++ ) {
 
         CardsEl[i].style.backgroundImage ="url(" + imagesArray[i] + ")"  // to add the photo by index of array 
 
-        CardsEl[i].style.backgroundSize = "contain"   // image size = card size
+       CardsEl[i].style.backgroundSize = "cover"   // image size = card size
 
         CardsEl[i].style.backgroundPosition ="center"
 
@@ -176,7 +176,7 @@ function startGame() {
 
         return
 
-    
+        }
 
 
         // Hide  the cards -- 
@@ -193,7 +193,7 @@ function startGame() {
 
 
     MessageEl.textContent = ( "Choose Two Technologies 💻")
-}
+
 
            // Timer
 
@@ -244,13 +244,13 @@ function handleClick(event) {
         return
 
     }
-}
+
 
     // Show image  when  player click on  it 
 
     event.target.style.backgroundImage ="url(" + imagesArray[cardIndex] + ")"
 
-    event.target.style.backgroundSize ="contain"
+    event.target.style.backgroundSize ="cover"
 
     event.target.style.backgroundPosition ="center"
 
@@ -270,11 +270,9 @@ function handleClick(event) {
         second = cardIndex
 
 
-}
+        ///////////
 
-///////////
-
-// Match
+        // Match
 
         if ( imagesArray[first] ===imagesArray[second]) {
 
@@ -282,10 +280,10 @@ function handleClick(event) {
 
             GameInfoScoreEl.textContent = ("🏆 Best Score : " + score + " / 6")
 
-    MessageEl.textContent = ("Match 🏆")
+            MessageEl.textContent = ("Match 🏆")
 
 
-if (score === 6) {
+            if (score === 6) {
 
                 clearInterval(Timmer)
 
@@ -295,7 +293,7 @@ if (score === 6) {
 
             }
 
-}
+        }
 
         else {
 
@@ -351,7 +349,10 @@ if (score === 6) {
 
         }, 1000) /// wait one second then run function ----1000ms
 
-    
+    }
+
+}
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 for (let i = 0;i < CardsEl.length;i++) {
@@ -382,5 +383,3 @@ if (CardsEl.length > 0) {
     init()
 
 }
-
-
