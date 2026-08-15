@@ -30,7 +30,7 @@ console.log('Technologies Memory Match')
 
 let first
 let BestScore
-let score
+
 let Duration
 let Lives
 let Timmer
@@ -77,7 +77,7 @@ function stoFunction (){
 
 function init (){
 
- clearInterval(Timmer) 
+ clearInterval(Timmer)  // stop 
  BestScore =0 ;
   Duration =null ;
   Timmer =0 ;
@@ -142,13 +142,13 @@ for (let i = 0;i < CardsEl.length;i++ ) {
 
         CardsEl[i].style.backgroundImage ="url(" + imagesArray[i] + ")"  // to add the photo by index of array 
 
-       CardsEl[i].style.backgroundSize = "cover"   // image size = card size
-
+       CardsEl[i].style.backgroundSize = "contain"   // image size = card size
         CardsEl[i].style.backgroundPosition ="center"
+        CardsEl[i].style.backgroundSize = "100% 100%"
 
         CardsEl[i].style.backgroundRepeat ="no-repeat"
 
-        CardsEl[i].style.visibility = "visible"
+        CardsEl[i].style.visibility = "visible" // to show the style of the cards on css file 
 
     }
 
@@ -172,7 +172,7 @@ MessageEl.textContent ="Press Start ▶️"
 
 function startGame() {
                                   // if timer run exit the function -- to avoid  user repate the timer 
-        if (Timmer) {
+        if (Timmer !== 0) {
 
         return
 
@@ -250,7 +250,9 @@ function handleClick(event) {
 
     event.target.style.backgroundImage ="url(" + imagesArray[cardIndex] + ")"
 
-    event.target.style.backgroundSize ="cover"
+    event.target.style.backgroundSize ="contain"
+    event.target.style.backgroundSize = "100% 100%"
+
 
     event.target.style.backgroundPosition ="center"
 
@@ -276,14 +278,14 @@ function handleClick(event) {
 
         if ( imagesArray[first] ===imagesArray[second]) {
 
-            score = score + 1
+            BestScore = BestScore + 1
 
-            GameInfoScoreEl.textContent = ("🏆 Best Score : " + score + " / 6")
+            GameInfoScoreEl.textContent = ("🏆 Best Score : " + BestScore + " / 6")
 
             MessageEl.textContent = ("Match 🏆")
 
 
-            if (score === 6) {
+            if (BestScore === 6) {
 
                 clearInterval(Timmer)
 
