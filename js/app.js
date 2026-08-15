@@ -176,29 +176,42 @@ function startGame() {
 
         return
 
-    }
-}
+    
+
 
         // Hide  the cards -- 
 
     for (let i = 0;i < CardsEl.length;i++) {
 
-        CardsEl[i].style.backgroundImage =
-            "none"
+        CardsEl[i].style.backgroundImage ="none"
 
-        CardsEl[i].textContent =
-            "💻"
+        CardsEl[i].textContent ="💻"
 
     }
 
 
-    MessageEl.textContent =
-        "Choose Two Technologies 💻"
+    MessageEl.textContent = ( "Choose Two Technologies 💻")
+}
 
+           // Timer
 
+ Timmer = setInterval(function () {
 
+    Duration = Duration - 1
 
+    GameInfoDurationEl.textContent = ("⏱️ Duration : " + Duration)
 
+    if (Duration === 0) {
 
+        clearInterval(Timmer)
 
-/*----------------------------- Event Listeners -----------------------------*/
+        Timmer = null
+
+        MessageEl.textContent = ("Game Over :")
+
+    }
+
+}, 1000)
+/// run this function every milliseconds 1000
+}
+
