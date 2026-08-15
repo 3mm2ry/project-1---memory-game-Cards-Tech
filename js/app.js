@@ -319,4 +319,41 @@ if (score === 6) {
         }
 
 
+         // hide
+
+        /// setTimeout() run the function one time only ----- while setInterval() repate the function 
+        setTimeout(function () {
+
+            if (imagesArray[first] ===imagesArray[second]) {
+
+                CardsEl[first].style.visibility = "hidden"
+
+                CardsEl[second].style.visibility ="hidden"
+
+            }
+
+            else {
+
+         CardsEl[first].style.backgroundImage ="none"
+
+                      CardsEl[second].style.backgroundImage ="none"
+
+         CardsEl[first].textContent ="💻"
+
+                CardsEl[second].textContent ="💻"
+
+            }
+
+
+            first = null
+
+            second = null
+
+        }, 1000) /// wait one second then run function ----1000ms
+
+    
+
+
+
+
 
