@@ -352,8 +352,35 @@ if (score === 6) {
         }, 1000) /// wait one second then run function ----1000ms
 
     
+/*----------------------------- Event Listeners -----------------------------*/
+
+for (let i = 0;i < CardsEl.length;i++) {
+
+    CardsEl[i].addEventListener("click",handleClick)
+
+}
 
 
+if (StartEl) {
 
+StartEl.addEventListener("click",startGame)
+
+}
+
+
+if (RestartEl) {
+
+    RestartEl.addEventListener("click",init)
+
+}
+
+
+//////////Start 
+
+if (CardsEl.length > 0) {
+
+    init()
+
+}
 
 
