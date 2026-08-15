@@ -246,3 +246,30 @@ function handleClick(event) {
     }
 }
 
+    // Show image  when  player click on  it 
+
+    event.target.style.backgroundImage ="url(" + imagesArray[cardIndex] + ")"
+
+    event.target.style.backgroundSize ="contain"
+
+    event.target.style.backgroundPosition ="center"
+
+    event.target.style.backgroundRepeat ="no-repeat"
+
+    event.target.textContent =""
+
+
+    if (first === null) {
+
+        first = cardIndex
+
+    }
+
+    else {
+
+        second = cardIndex
+
+
+}
+
+
