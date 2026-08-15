@@ -272,4 +272,51 @@ function handleClick(event) {
 
 }
 
+///////////
+
+// Match
+
+        if ( imagesArray[first] ===imagesArray[second]) {
+
+            score = score + 1
+
+            GameInfoScoreEl.textContent = ("🏆 Best Score : " + score + " / 6")
+
+    MessageEl.textContent = ("Match 🏆")
+
+
+if (score === 6) {
+
+                clearInterval(Timmer)
+
+                Timmer = null
+
+                MessageEl.textContent = "You Win "
+
+            }
+
+}
+
+        else {
+
+            Lives = Lives - 1
+
+            GameInfoLivesEl.textContent ="❤️ Lives : " + Lives
+
+            MessageEl.textContent ="Wrong ❌"
+
+
+            if (Lives === 0) {
+
+                   clearInterval(Timmer)
+
+                  Timmer = null
+
+                MessageEl.textContent ="Game Over:"
+
+            }
+
+        }
+
+
 
