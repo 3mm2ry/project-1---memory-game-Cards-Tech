@@ -63,7 +63,7 @@ function stoFunction (){
             localStorage.setItem("Difficulty",ChooseDifficultyButtonsEl[i].textContent )
         }
 
- ChooseDifficultyButtonsEl[i].addEventListener("click",stoFunction )   // event click but i add it  here because we need the lop 
+ ChooseDifficultyButtonsEl[i].addEventListener("click",stoFunction )   // event click but Iam  add it  here because we need the lop 
             
      
     
@@ -153,7 +153,8 @@ for (let i = 0;i < CardsEl.length;i++ ) {
     }
 
 
-    
+        // Game Info
+
 GameInfoScoreEl.textContent ="🏆 Best Score : " + BestScore
 
        GameInfoDurationEl.textContent ="⏱️ Duration : " + Duration
@@ -167,7 +168,34 @@ MessageEl.textContent ="Press Start ▶️"
 
 }
 
-    // Game Info
+/*-------------------------------- Start Game --------------------------------*/
+
+function startGame() {
+                                  // if timer run exit the function -- to avoid  user repate the timer 
+        if (Timmer) {
+
+        return
+
+    }
+}
+
+        // Hide  the cards -- 
+
+    for (let i = 0;i < CardsEl.length;i++) {
+
+        CardsEl[i].style.backgroundImage =
+            "none"
+
+        CardsEl[i].textContent =
+            "💻"
+
+    }
+
+
+    MessageEl.textContent =
+        "Choose Two Technologies 💻"
+
+
 
 
 
