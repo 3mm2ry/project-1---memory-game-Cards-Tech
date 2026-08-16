@@ -183,11 +183,11 @@ function startGame() {
 
     for (let i = 0;i < CardsEl.length;i++) {
 
-        CardsEl[i].style.backgroundImage =
-            "none"
+        CardsEl[i].style.backgroundImage ="none"
 
-        CardsEl[i].textContent =
-            "💻"
+        CardsEl[i].textContent ="💻"
+
+     
 
     }
 
@@ -197,21 +197,23 @@ function startGame() {
 
            // Timer
 
- Timmer = setInterval(function () {
+ Timmer = setInterval(function () {   // setInterval()Runs a piece of code repeatedly at a specified time interval.
 
     Duration = Duration - 1
+  
 
     GameInfoDurationEl.textContent = ("⏱️ Duration : " + Duration)
 
     if (Duration === 0) {
 
-        clearInterval(Timmer)
+        clearInterval(Timmer) // stop 
 
         Timmer = null
 
-        MessageEl.textContent = ("Game Over :")
+        MessageEl.textContent = ("Game Over")
 
     }
+       
 
 }, 1000)
 /// run this function every milliseconds 1000
@@ -222,7 +224,9 @@ function startGame() {
 function handleClick(event) {
 
     // if there is no timmer -- exit 
-    if (!Timmer) {
+    /// if (Timmer === 0) 
+  //// timer not working 
+    if (!Timmer) {     
 
         return
 
@@ -238,7 +242,7 @@ function handleClick(event) {
 
     let cardIndex = Number(event.target.id)
 
-
+  // // Prevent the player from selecting the same card twice
     if (cardIndex === first) {
 
         return
@@ -312,7 +316,7 @@ function handleClick(event) {
 
                   Timmer = null
 
-                MessageEl.textContent ="Game Over:"
+                MessageEl.textContent ="Game Over"
 
             }
 
@@ -322,13 +326,15 @@ function handleClick(event) {
          // hide
 
         /// setTimeout() run the function one time only ----- while setInterval() repate the function 
+        // Run the function once after a 1-second delay ----- delayyyy
         setTimeout(function () {
 
             if (imagesArray[first] ===imagesArray[second]) {
 
                 CardsEl[first].style.visibility = "hidden"
 
-                CardsEl[second].style.visibility ="hidden"
+                CardsEl[second].style.visibility ="hidden" // // to hide the style of the cards on css file 
+
 
             }
 
@@ -380,8 +386,6 @@ if (RestartEl) {
 
 //////////Start 
 
-if (CardsEl.length > 0) {
 
     init()
 
-}
