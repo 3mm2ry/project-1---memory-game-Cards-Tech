@@ -36,6 +36,7 @@ let Lives
 let Timmer
 let Difficulty
 let second
+let pickedDifficulty
 
 /*------------------------ Cached Element References  ------------------------*/
 
@@ -60,7 +61,10 @@ console.log(CardsEl,GameInfoDifficultyEl,ChooseDifficultyButtonsEl,GameInfoLives
 for ( let i = 0;i < ChooseDifficultyButtonsEl.length;i++) {
 
 function stoFunction (){ 
+
+        pickedDifficulty = ChooseDifficultyButtonsEl[i].textContent
             localStorage.setItem("Difficulty",ChooseDifficultyButtonsEl[i].textContent )
+                                     ///key                           ///value 
         }
 
  ChooseDifficultyButtonsEl[i].addEventListener("click",stoFunction )   // event click but Iam  add it  here because we need the lop 
@@ -90,7 +94,7 @@ Difficulty = localStorage.getItem("Difficulty")
 
     // Default
 
-if (Difficulty === null) {
+if (pickedDifficulty === null) {
 
         Difficulty = "Easy"
      localStorage.setItem("Difficulty",Difficulty)
@@ -132,7 +136,7 @@ if (Difficulty === null) {
 
 
  
-})
+})      
 
 
 // Show cards
@@ -382,6 +386,7 @@ if (RestartEl) {
     RestartEl.addEventListener("click",init)
 
 }
+
 
 
 //////////Start 
