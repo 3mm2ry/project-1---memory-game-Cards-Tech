@@ -64,7 +64,7 @@ for (let i = 0; i < ChooseDifficultyButtonsEl.length; i++) {
 
         pickedDifficulty = ChooseDifficultyButtonsEl[i].textContent
         localStorage.setItem("Difficulty", ChooseDifficultyButtonsEl[i].textContent)
-                               ///key                           ///value 
+        ///key                           ///value 
     }
 
     ChooseDifficultyButtonsEl[i].addEventListener("click", stoFunction)   // event click but Iam  add it  here because we need the lop 
