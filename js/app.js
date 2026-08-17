@@ -4,25 +4,25 @@ console.log('Technologies Memory Match')
 
 
 
-     const imagesArray =[
-          "./Images/tech1.png" ,
-          "./Images/tech1.png",
+const imagesArray = [
+    "./Images/tech1.png",
+    "./Images/tech1.png",
 
-          "./Images/tech2.png"
-          ,"./Images/tech2.png",
+    "./Images/tech2.png"
+    , "./Images/tech2.png",
 
-          "./Images/tech3.png",
-          "./Images/tech3.png",
+    "./Images/tech3.png",
+    "./Images/tech3.png",
 
-          "./Images/tech4.png",
-          "./Images/tech4.png",
+    "./Images/tech4.png",
+    "./Images/tech4.png",
 
-          "./Images/tech5.png",
-          "./Images/tech5.png",
+    "./Images/tech5.png",
+    "./Images/tech5.png",
 
-          "./Images/tech6.png",
-          "./Images/tech6.png",
-     ]
+    "./Images/tech6.png",
+    "./Images/tech6.png",
+]
 
 
 /*-------------------------------- Variables --------------------------------*/
@@ -40,17 +40,17 @@ let pickedDifficulty
 
 /*------------------------ Cached Element References  ------------------------*/
 
-const ChooseDifficultyButtonsEl=document.querySelectorAll('.Difficulty')
-const CardsEl =document.querySelectorAll('.sqr')
-const GameInfoDifficultyEl =document.querySelector('#Difficulty')
-const GameInfoLivesEl =document.querySelector('#Lives')
-const GameInfoScoreEl =document.querySelector('#Score')
-const GameInfoDurationEl =document.querySelector('#Duration')
-const MessageEl =document.querySelector('#Message')
-const RestartEl =document.querySelector("#rest")
+const ChooseDifficultyButtonsEl = document.querySelectorAll('.Difficulty')
+const CardsEl = document.querySelectorAll('.sqr')
+const GameInfoDifficultyEl = document.querySelector('#Difficulty')
+const GameInfoLivesEl = document.querySelector('#Lives')
+const GameInfoScoreEl = document.querySelector('#Score')
+const GameInfoDurationEl = document.querySelector('#Duration')
+const MessageEl = document.querySelector('#Message')
+const RestartEl = document.querySelector("#rest")
 const StartEl = document.querySelector("#start")
 
-console.log(CardsEl,GameInfoDifficultyEl,ChooseDifficultyButtonsEl,GameInfoLivesEl,GameInfoDurationEl,GameInfoScoreEl,MessageEl,StartEl,RestartEl)
+console.log(CardsEl, GameInfoDifficultyEl, ChooseDifficultyButtonsEl, GameInfoLivesEl, GameInfoDurationEl, GameInfoScoreEl, MessageEl, StartEl, RestartEl)
 
 
 
@@ -58,51 +58,51 @@ console.log(CardsEl,GameInfoDifficultyEl,ChooseDifficultyButtonsEl,GameInfoLives
 
 // store the  Difficulty chose from users 
 
-for ( let i = 0;i < ChooseDifficultyButtonsEl.length;i++) {
+for (let i = 0; i < ChooseDifficultyButtonsEl.length; i++) {
 
-function stoFunction (){ 
+    function stoFunction() {
 
         pickedDifficulty = ChooseDifficultyButtonsEl[i].textContent
-            localStorage.setItem("Difficulty",ChooseDifficultyButtonsEl[i].textContent )
-                                     ///key                           ///value 
-        }
+        localStorage.setItem("Difficulty", ChooseDifficultyButtonsEl[i].textContent)
+                               ///key                           ///value 
+    }
 
- ChooseDifficultyButtonsEl[i].addEventListener("click",stoFunction )   // event click but Iam  add it  here because we need the lop 
-            
-     
-    
+    ChooseDifficultyButtonsEl[i].addEventListener("click", stoFunction)   // event click but Iam  add it  here because we need the lop 
 
-        }
-   
+
+
+
+}
+
 
 
 /*-------------------------------- Functions --------------------------------*/
 
 
-function init (){
+function init() {
 
- clearInterval(Timmer)  // stop 
- BestScore =0 ;
-  Duration =null ;
-  Timmer =0 ;
-  first =null ;
-   second=null ;
+    clearInterval(Timmer)  // stop 
+    BestScore = 0;
+    Duration = null;
+    Timmer = 0;
+    first = null;
+    second = null;
 
-// Get Difficulty from localStorage
-Difficulty = localStorage.getItem("Difficulty")
+    // Get Difficulty from localStorage
+    Difficulty = localStorage.getItem("Difficulty")
 
 
     // Default
 
-if (pickedDifficulty === null) {
+    if (pickedDifficulty === null) {
 
         Difficulty = "Easy"
-     localStorage.setItem("Difficulty",Difficulty)
+        localStorage.setItem("Difficulty", Difficulty)
 
 
     }
 
-////--------------------------------
+    ////--------------------------------
     if (Difficulty === "Easy") {
 
         Duration = 100
@@ -113,7 +113,7 @@ if (pickedDifficulty === null) {
     else if (Difficulty === "Medium") {
 
         Duration = 50
-        Lives = 6
+        Lives = 5
 
     }
 
@@ -128,99 +128,99 @@ if (pickedDifficulty === null) {
 
 
 
-//    to add function into array and make the cards random
-   imagesArray.sort(function(){
+    //    to add function into array and make the cards random
+    imagesArray.sort(function () {
 
-     return Math.random()-0.5
-
-
-
- 
-})      
+        return Math.random() - 0.5
 
 
-// Show cards
-for (let i = 0;i < CardsEl.length;i++ ) {
+
+
+    })
+
+
+    // Show cards
+    for (let i = 0; i < CardsEl.length; i++) {
 
         CardsEl[i].textContent = ""
 
-        CardsEl[i].style.backgroundImage ="url(" + imagesArray[i] + ")"  // to add the photo by index of array 
+        CardsEl[i].style.backgroundImage = "url(" + imagesArray[i] + ")"  // to add the photo by index of array 
 
-       CardsEl[i].style.backgroundSize = "contain"   // image size = card size
-        CardsEl[i].style.backgroundPosition ="center"
+        CardsEl[i].style.backgroundSize = "contain"   // image size = card size
+        CardsEl[i].style.backgroundPosition = "center"
         CardsEl[i].style.backgroundSize = "100% 100%"
 
-        CardsEl[i].style.backgroundRepeat ="no-repeat"
+        CardsEl[i].style.backgroundRepeat = "no-repeat"
 
         CardsEl[i].style.visibility = "visible" // to show the style of the cards on css file 
 
     }
 
 
-        // Game Info
+    // Game Info
 
-GameInfoScoreEl.textContent ="🏆 Best Score : " + BestScore
+    GameInfoScoreEl.textContent = "🏆 Best Score : " + BestScore
 
-       GameInfoDurationEl.textContent ="⏱️ Duration : " + Duration
+    GameInfoDurationEl.textContent = "⏱️ Duration : " + Duration
 
-    GameInfoDifficultyEl.textContent ="🎮 Difficulty : " + Difficulty
+    GameInfoDifficultyEl.textContent = "🎮 Difficulty : " + Difficulty
 
 
-    GameInfoLivesEl.textContent ="❤️ Lives : " + Lives
+    GameInfoLivesEl.textContent = "❤️ Lives : " + Lives
 
-MessageEl.textContent ="Press Start ▶️"
+    MessageEl.textContent = "Press Start ▶️"
 
 }
 
 /*-------------------------------- Start Game --------------------------------*/
 
 function startGame() {
-                                  // if timer run exit the function -- to avoid  user repate the timer 
-        if (Timmer !== 0) {
+    // if timer run exit the function -- to avoid  user repate the timer 
+    if (Timmer !== 0) {
 
         return
+
+    }
+
+
+    // Hide  the cards -- 
+
+    for (let i = 0; i < CardsEl.length; i++) {
+
+        CardsEl[i].style.backgroundImage = "none"
+
+        CardsEl[i].textContent = "💻"
+
+
+
+    }
+
+
+    MessageEl.textContent = ("Choose Two Technologies 💻")
+
+
+    // Timer
+
+    Timmer = setInterval(function () {   // setInterval()Runs a piece of code repeatedly at a specified time interval.
+
+        Duration = Duration - 1
+
+
+        GameInfoDurationEl.textContent = ("⏱️ Duration : " + Duration)
+
+        if (Duration === 0) {
+
+            clearInterval(Timmer) // stop 
+
+            Timmer = null
+
+            MessageEl.textContent = ("Game Over")
 
         }
 
 
-        // Hide  the cards -- 
-
-    for (let i = 0;i < CardsEl.length;i++) {
-
-        CardsEl[i].style.backgroundImage ="none"
-
-        CardsEl[i].textContent ="💻"
-
-     
-
-    }
-
-
-    MessageEl.textContent = ( "Choose Two Technologies 💻")
-
-
-           // Timer
-
- Timmer = setInterval(function () {   // setInterval()Runs a piece of code repeatedly at a specified time interval.
-
-    Duration = Duration - 1
-  
-
-    GameInfoDurationEl.textContent = ("⏱️ Duration : " + Duration)
-
-    if (Duration === 0) {
-
-        clearInterval(Timmer) // stop 
-
-        Timmer = null
-
-        MessageEl.textContent = ("Game Over")
-
-    }
-       
-
-}, 1000)
-/// run this function every milliseconds 1000
+    }, 1000)
+    /// run this function every milliseconds 1000
 }
 
 /*-------------------------------- Handle Click --------------------------------*/
@@ -229,14 +229,14 @@ function handleClick(event) {
 
     // if there is no timmer -- exit 
     /// if (Timmer === 0) 
-  //// timer not working 
-    if (!Timmer) {     
+    //// timer not working 
+    if (!Timmer) {
 
         return
 
     }
 
-     // if second not null -- mean the player chose 2 carde and -- exit to prevent player chose more than 2 card
+    // if second not null -- mean the player chose 2 carde and -- exit to prevent player chose more than 2 card
     if (second !== null) {
 
         return
@@ -246,7 +246,7 @@ function handleClick(event) {
 
     let cardIndex = Number(event.target.id)
 
-  // // Prevent the player from selecting the same card twice
+    // // Prevent the player from selecting the same card twice
     if (cardIndex === first) {
 
         return
@@ -256,17 +256,17 @@ function handleClick(event) {
 
     // Show image  when  player click on  it 
 
-    event.target.style.backgroundImage ="url(" + imagesArray[cardIndex] + ")"
+    event.target.style.backgroundImage = "url(" + imagesArray[cardIndex] + ")"
 
-    event.target.style.backgroundSize ="contain"
+    event.target.style.backgroundSize = "contain"
     event.target.style.backgroundSize = "100% 100%"
 
 
-    event.target.style.backgroundPosition ="center"
+    event.target.style.backgroundPosition = "center"
 
-    event.target.style.backgroundRepeat ="no-repeat"
+    event.target.style.backgroundRepeat = "no-repeat"
 
-    event.target.textContent =""
+    event.target.textContent = ""
 
 
     if (first === null) {
@@ -284,7 +284,7 @@ function handleClick(event) {
 
         // Match
 
-        if ( imagesArray[first] ===imagesArray[second]) {
+        if (imagesArray[first] === imagesArray[second]) {
 
             BestScore = BestScore + 1
 
@@ -309,48 +309,48 @@ function handleClick(event) {
 
             Lives = Lives - 1
 
-            GameInfoLivesEl.textContent ="❤️ Lives : " + Lives
+            GameInfoLivesEl.textContent = "❤️ Lives : " + Lives
 
-            MessageEl.textContent ="Wrong ❌"
+            MessageEl.textContent = "Wrong ❌"
 
 
             if (Lives === 0) {
 
-                   clearInterval(Timmer)
+                clearInterval(Timmer)
 
-                  Timmer = null
+                Timmer = null
 
-                MessageEl.textContent ="Game Over"
+                MessageEl.textContent = "Game Over"
 
             }
 
         }
 
 
-         // hide
+        // hide
 
         /// setTimeout() run the function one time only ----- while setInterval() repate the function 
         // Run the function once after a 1-second delay ----- delayyyy
         setTimeout(function () {
 
-            if (imagesArray[first] ===imagesArray[second]) {
+            if (imagesArray[first] === imagesArray[second]) {
 
                 CardsEl[first].style.visibility = "hidden"
 
-                CardsEl[second].style.visibility ="hidden" // // to hide the style of the cards on css file 
+                CardsEl[second].style.visibility = "hidden" // // to hide the style of the cards on css file 
 
 
             }
 
             else {
 
-         CardsEl[first].style.backgroundImage ="none"
+                CardsEl[first].style.backgroundImage = "none"
 
-                      CardsEl[second].style.backgroundImage ="none"
+                CardsEl[second].style.backgroundImage = "none"
 
-         CardsEl[first].textContent ="💻"
+                CardsEl[first].textContent = "💻"
 
-                CardsEl[second].textContent ="💻"
+                CardsEl[second].textContent = "💻"
 
             }
 
@@ -367,23 +367,23 @@ function handleClick(event) {
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-for (let i = 0;i < CardsEl.length;i++) {
+for (let i = 0; i < CardsEl.length; i++) {
 
-    CardsEl[i].addEventListener("click",handleClick)
+    CardsEl[i].addEventListener("click", handleClick)
 
 }
 
 
 if (StartEl) {
 
-StartEl.addEventListener("click",startGame)
+    StartEl.addEventListener("click", startGame)
 
 }
 
 
 if (RestartEl) {
 
-    RestartEl.addEventListener("click",init)
+    RestartEl.addEventListener("click", init)
 
 }
 
@@ -392,5 +392,5 @@ if (RestartEl) {
 //////////Start 
 
 
-    init()
+init()
 
